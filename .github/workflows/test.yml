@@ -1,0 +1,12 @@
+name: test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          echo "${MY_SECRET}" | base64
